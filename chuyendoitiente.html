@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>dongho</title>
+</head>
+<body>
+<h1>Quy đổi tiền tệ</h1>
+<p> Giá trị</p>
+
+<input type= "text" id= "value">
+<input type="submit" onclick="changeMoney()" value= "Chuyển đổi">
+<div id="demo"> </div> 
+<script>
+ 
+ function changeMoney(){ 
+    let VND = document.getElementById("value").value;
+    let result = VND * 22000;
+    document.getElementById("demo").innerHTML = result;
+ }
+</script>
+</body>
+</html>
