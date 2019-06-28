@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<title>Xin chao</title>
+<head>
+</head>
+<body>
+   <table width=600; height=300; border="3">
+        <tr >
+                
+                <th colspan="3">
+                    <h2>BẢNG ĐỔI TIỀN TỆ </h2>
+                </th>
+        </tr>
+   
+<tr>    
+
+    <td>số tiền cần đổi</td>
+    <td>loại tiền cần đổi</td>
+    <td> loại tiền muốn đổi</td>
+</tr>
+<tr>
+    <td><input type="number" id="number"> </td>
+<td> <select id="from">
+    <option value="tien1"> VN đồng</option>
+    <option value="tien2"> Dola Mỹ</option>
+    <option value="tien3">Ringgit malaysia</option>
+</select></td>
+<td> <select id="to">
+    <option value="tien2"> Dola Mỹ</option>
+    <option value="tien1"> VN đồng</option>
+    <option value="tien3"> Ringgit malaysia</option>
+</select></td>
+
+</tr>
+<tr>
+        <td colspan="3">Giá trị quy đổi:<input type="text" id="result" disabled>
+             <button type="button" onclick="convert();">Đồng ý </button>
+        </td>
+       
+    </tr>
+</table>
+<script>
+        function convert(){
+            let from = document.getElementById("from").value;
+            let to = document.getElementById("to").value;
+            let number = document.getElementById("number").value;
+
+            let result;
+            if (from == "tien1" && to == "tien2"){
+                result = number/23000;
+                document.getElementById("result").value = result;
+            }
+            if (from == "tien2" && to == "tien1"){
+                result = number*23000;
+                document.getElementById("result").value = result;
+            }
+            if ((from == "tien1" && to == "tien1") || (from == "tien2" && to == "tien2")){
+                result = number*1;
+                document.getElementById("result").value = result;
+            }
+
+                if (from == "tien3" && to == "tien1"){
+                result = number*5600;
+                document.getElementById("result").value = result;
+                }
+                if (from == "tien3" && to == "tien2"){
+                result = number/4;
+                document.getElementById("result").value = result;
+                }
+                if (from == "tien2" && to == "tien3"){
+                result = number/4;
+                document.getElementById("result").value = result;
+                }
+
+                if (from == "tien1" && to == "tien3"){
+                result = number/5600;
+                document.getElementById("result").value = result;
+                }
+                if ((from == "tien2" && to == "tien2") || (from == "tien3" && to == "tien3")){
+                result = number*1;
+                document.getElementById("result").value = result;}
+
+                if ((from == "tien2" && to == "tien2") || (from == "tien1" && to == "tien1")){
+                result = number*1;
+                document.getElementById("result").value = result;
+                }
+            }
+        
+    </script>
+</body>
+
+
