@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <input type="text" id="nhietDo" class="form-control" placeholder="nhập độ C">
+    
+                <div>
+                    <button type="button" onclick="doiNhietDo()">đổi nhiệt độ</button>
+                </div>
+                <div id="resutl">
+                </div>
+</head>
+<script>
+function doiNhietDo() { 
+    
+    let c = document.getElementById ("nhietDo").value;
+    let f = ((c+32)*9)/5;
+    let d = document.getElementById ("resutl").innerHTML=f;
+
+}
+
+</script>
+
+
+</html>

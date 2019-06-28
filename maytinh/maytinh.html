@@ -1,0 +1,54 @@
+<table width=400px; height=150px; border="3">
+    <tr>
+        <th colspan="4"> May tinh co ban</th>
+        <br>
+    </tr>
+    <td> nhap so thu nhat</td>
+    <td><input type="text" placeholder="nhap so thu nhat" side="40" name="" id="so1"></td>
+
+    <td>nhap so thu hai</td>
+    <td><input type=" text" placeholder="nhap so thu hai" side="40" name="" id="so2"></td>
+    <tr>
+        <th colspan="4" ;>
+            <button type="button" onclick="nhan()">tinh nhan</button>
+            <button type="button" onclick="chia()">tinh chia</button>
+            <button type="button" onclick="cong()">tinh cong</button>
+            <button type="button" onclick="tru()">tinh tru </button>
+        </th>
+    <tr>
+        <td id=show><input type="text" placeholder="dap an la" side="40" name="0"></td>
+    </tr>
+    </tr>
+</table>
+<script>
+    function nhan() {
+        let a = parseFloat(document.getElementById('so1').value);
+        let b = parseFloat(document.getElementById('so2').value);
+        let result = a * b;
+        let x;
+        if (confirm("ban co muon thuc hien phep toan ko")) {
+            x = "ok";
+            document.getElementById('show').innerHTML = result;
+        } else {
+            x = "thoat";
+        }
+    }
+    function chia() {
+        let a = parseFloat(document.getElementById('so1').value);
+        let b = parseFloat(document.getElementById('so2').value);
+        let result = a / b;
+        document.getElementById('show').innerHTML = result;
+    }
+    function cong() {
+        let a = parseFloat(document.getElementById('so1').value);
+        let b = parseFloat(document.getElementById('so2').value);
+        let result = a + b;
+        document.getElementById('show').innerHTML = result;
+    }
+    function tru() {
+        let a = parseFloat(document.getElementById('so1').value);
+        let b = parseFloat(document.getElementById('so2').value);
+        let result = a - b;
+        document.getElementById('show').innerHTML = result;
+    }
+</script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <table>
+           <tr>
+               <td></td>
+               <td><h3>BẢNG ĐỔI TIỀN TỆ</h3></td>
+           </tr>
+           <tr>
+               <td><center>Số tiền cần đổi</center></td>
+               <td>Loại tiền cần đổi</td>
+               <td>Loại tiền muốn đổi ra</td>
+           </tr>
+           <tr>
+               <td><input type="number" id="number"></td>
+               <td><center><select id="from">
+                       <option value="tien1">VN đồng</option>
+                       <option value="tien2">Đôla Mỹ</option>
+                     </select></center></td>
+               <td><select id="to">
+                       <option value="tien2">Đôla Mỹ</option>
+                       <option value="tien1">VN đồng</option>
+                     </select></td>
+               <td><button type="button" onclick="convert();">CONVERT</button></td>
+           </tr>
+           <tr>
+               <td><input type="text" id="result"></td>
+           </tr>
+       </table>
+       <script>
+           function convert(){
+               let from = document.getElementById("from").value;
+               let to = document.getElementById("to").value;
+               let number = document.getElementById("number").value;
+
+               let result;
+               if (from == "tien1" && to == "tien2"){
+                   result = number/23000;
+                   document.getElementById("result").value = result;
+               }
+               if (from == "tien2" && to == "tien1"){
+                   result = number*23000;
+                   document.getElementById("result").value = result;
+               }
+               if ((from == "tien1" && to == "tien1") || (from == "tien2" && to == "tien2")){
+                   result = number*1;
+                   document.getElementById("result").value = result;
+               }
+           }
+       </script>
+
+   </head>
+</html>
