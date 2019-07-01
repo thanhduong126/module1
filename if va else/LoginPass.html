@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+<body>
+    <script>
+        let UserName = prompt("Chào bạn","");
+        
+        if (UserName=="Admin") {
+            let Pass = prompt("Nhập Pass","");
+            if(Pass== "123"){
+                alert("Pass chính xác");      
+            }else if (Pass==""){
+                alert("Hãy nhập Pass");
+            }else {
+                alert("Sai Pass");
+            }
+
+        }else if (UserName==""){
+            alert("Xin vui lòng nhập");
+        }else {
+            alert("Sai User");
+        }
+        
+          
+        
+    
+    </script>
+
+</body>
+</html>
