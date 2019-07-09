@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  input {
+      font-size: 40px;
+  }
+
+  #nut {
+      color: blue
+  }
+</style>
+
+<head>
+  <title>Dictionary</title>
+</head>
+
+<body style="font-size: 40px">
+  <center>
+      <h1>Dictionary</h1>
+      <table>
+          <tr>
+              <td>
+                  <center>English</center>
+              </td>
+              <td>
+                  <center>To</center>
+              </td>
+              <td>
+                  <center>Vietnamese</center>
+              </td>
+          </tr>
+          <tr>
+              <td><input type="text" id="eng"></td>
+              <td><input type="button" id="nut" value="Translate" onclick="tran()"></td>
+              <td><input type="text" style="width: 750px" id="viet" disabled></td>
+          </tr>
+      </table>
+      <script>
+          let dice = ["hello", "bye", "one", "two", "car", "ball", "manu", "mrLam", "kun", "messi"];
+          let dicv = ["xin chào", "tạm biệt", "số 1", "số 2", "ô tô", "quả bóng", "CLB vĩ đại", "Thánh gay", "Hoàng tử của ba mẹ", "chàng lùn thất bại"];
+          let find
+          function tran() {
+              let eng = document.getElementById("eng").value;
+              for (i = 0; i < dice.length; i++) {
+                  if (eng == dice[i]) {
+                      document.getElementById("viet").value = dicv[i];
+                      break;
+                  } else
+                      document.getElementById("viet").value = "Không có trong Từ điển, nhập lại từ khác";
+              }
+
+          }
+      </script>
+  </center>
+</body>
+
+</html>

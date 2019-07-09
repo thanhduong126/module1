@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <h3>Caro Game Simple</h3>
+    <p id="carogame">
+    <input type="button" value="Change Value" onclick="changeValue()">
+</body>
+<script>
+    let b = document.getElementById("carogame");
+    
+    let board = [];
+    let data = "";
+
+    //tao du lieu
+    for (let i = 0; i < 10; i++) {
+        board[i] = new Array(0, 0, 0, 0, 0,0,0,0,0,0);
+    }
+    
+    for (let i = 0; i < 10; i++) {
+        data += "<br/>";
+        for (let j = 0; j < 10; j++) {
+            data += board[i][j] + "&nbsp;&nbsp;";//khoang trong
+        }
+    }
+    //hien thi ban co caro
+    
+    data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
+    b.innerHTML = data;
+    //hien thi du lieu
+
+    
+    function changeValue() {
+    let positionX = prompt("X: ");
+    let positionY = prompt("Y: ");
+    data = "";
+    board[positionX][positionY] = "x";// dau "x" duoc hien thi
+    for (let i = 0; i < 10; i++) {
+        data += "<br/>";
+        for (let j = 0; j < 10; j++) {
+            data += board[i][j] + "&nbsp;&nbsp;";
+        }
+    }
+    //load laiChange Value
+    data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
+    b.innerHTML = "<hr/>" + data;
+    //hien thi du lieu
+}
+    </script>
+    
+
+</html>
